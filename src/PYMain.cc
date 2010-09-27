@@ -82,7 +82,9 @@ start_component (void)
 
     Database::init ();
     PinyinConfig::init (bus);
+#if 0
     BopomofoConfig::init (bus);
+#endif
 
     g_signal_connect ((IBusBus *)bus, "disconnected", G_CALLBACK (ibus_disconnected_cb), NULL);
 
