@@ -93,8 +93,15 @@ Editor::processKeyEvent (guint keyval, guint keycode, guint modifiers)
     case IBUS_Return:
     case IBUS_KP_Enter:
         {
-            StaticText text (m_text);
-            commitText (text);
+            if (!m_text.empty () &&
+                (m_text[0] == 'i' || m_text[0] == 'u' || m_text[0] == 'v')) {
+                StaticText text (m_text.substr(1));
+                commitText(text);
+            }
+            else {
+                StaticText text (m_text);
+                commitText (text);
+            }
             reset ();
         }
         return TRUE;

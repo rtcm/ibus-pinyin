@@ -123,22 +123,18 @@ PinyinEngine::processKeyEvent (guint keyval, guint keycode, guint modifiers)
                 case IBUS_grave:
                     m_input_mode = MODE_PUNCT;
                     break;
-#ifdef IBUS_BUILD_LUA_EXTENSION
                 case IBUS_i:
                     // do not enable lua extension when use double pinyin.
                     if (PinyinConfig::instance ().doublePinyin ())
                         break;
                     m_input_mode = MODE_EXTENSION;
                     break;
-#endif
-#ifdef IBUS_BUILD_ENGLISH_INPUT_MODE
                 case IBUS_v:
                     // do not enable english mode when use double pinyin.
                     if (PinyinConfig::instance ().doublePinyin ())
                         break;
                     m_input_mode = MODE_ENGLISH;
                     break;
-#endif
                 }
             }
             else {
