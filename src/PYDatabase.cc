@@ -46,6 +46,7 @@ public:
 
     void double_ (void) {
         gint i = size ();
+        reserve (i * 2);
         do {
             push_back (at (--i));
         } while (i > 0);
@@ -53,8 +54,9 @@ public:
 
     void triple (void) {
         gint i = size ();
+        reserve (i * 3);
         do {
-            const std::string & value = std::vector<std::string>::at (--i);
+            const std::string & value = at (--i);
             push_back (value);
             push_back (value);
         } while (i > 0);
