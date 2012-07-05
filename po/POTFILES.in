@@ -1,3 +1,4 @@
+data/ibus-setup-pinyin.desktop.in.in
 src/PYConfig.cc
 src/PYDatabase.cc
 src/PYDoublePinyinEditor.cc
